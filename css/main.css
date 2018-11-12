@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    list-style-type: none;
+    user-select: none;
+}
+body {
+    font-family: "Montserrat", Helvetica, sans-serif;
+    background: #121211;
+    color: azure;
+    position: relative;
+}
+p {
+    line-height: 1.7;
+}
+.container {
+    max-width: 90%;
+    width: 800px;
+    margin: 0 auto;
+}
+.nav-header {
+    background: rgba(41, 41, 41, .25);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.nav-header nav {
+    display: flex;
+    justify-content: flex-end;
+}
+.nav-list {
+    margin: 0;
+}
+.nav-item {
+    display: inline;
+    margin: 0;
+}
+.nav-item a {
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    display: inline-block;
+    transition: color 250ms;
+}
+.nav-item a:hover {
+    color: #ddd;
+}
+.section-profile {
+    text-align: center;
+    background: url(https://unsplash.it/1920/1080);
+    background: url(https://picsum.photos/1920/1080?image=916);
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    color: rgb(55, 76, 83);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+.profile-box {
+    background: rgba(207, 207, 207, .4);
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 10px;
+    transition: all 550ms;
+    transform-style: preserve-3d;
+}
+.profile-box-move {
+    background: rgba(207, 207, 207, .55);
+    transform-style: preserve-3d;
+    transform: rotateY(.075turn);
+}
+.profile-box h1, .profile-box h5 {
+    color: azure;
+    transform: translateZ(75px);
+}
+.profile-pic {
+    margin: 3rem auto .5rem;
+    width: 150px;
+    height: 150px;
+    border: 6px solid rgb(55, 76, 83);
+    border-radius: 50%;
+    transform: translateZ(60px);
+}
+.welcome {
+    margin: 4rem 0 0 0;
+    color: azure;
+}
+/* Toggle Button */
+input[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+.magicBtn-label {
+    margin: 1rem auto;
+    text-indent: -9999px;
+    cursor: pointer;
+    width: 30px;
+    height: 15px;
+    background: #121211;
+    display: block;
+    position: relative;
+    border-radius: 15px;
+}
+.magicBtn-label::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    background: whitesmoke;
+    border-radius: 10px; 
+    transition:  ease 100ms;
+}
+input:checked + label {
+    background: #557fda;
+}
+input:checked + label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+
+/* /Toggle Button */
+
+/* Down Arrow */
+
+.arrow-left, .arrow-right {
+    width: 50px;
+    height: 3px;
+    background: rgba(255, 255, 255, .7);
+    position: absolute;
+    right: 50vw;
+    left: 50vw;
+    bottom: 8vh;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.arrow-left {
+    transform: translateX(-10px) rotate(-35deg);
+}
+.arrow-right {
+    transform: translateX(-50px)rotate(35deg);
+}
+.arrow-hover {
+    -webkit-animation: arrow 1500ms infinite;
+    -moz-animation:    arrow 1500ms infinite;
+    -o-animation:      arrow 1500ms infinite;
+    animation:         arrow 1500ms infinite;
+}
+@-webkit-keyframes arrow {
+    0%   { bottom: 10vh; }
+    35% { bottom: 8vh; }
+    100% { bottom: 10vh; }
+}
+@-moz-keyframes arrow {
+    0%   { bottom: 10vh; }
+    35% { bottom: 8vh; }
+    100% { bottom: 10vh; }
+}
+@-o-keyframes arrow {
+    0%   { bottom: 10vh; }
+    35% { bottom: 8vh; }
+    100% { bottom: 10vh; }
+  }
+@keyframes arrow {
+    0%   { bottom: 10vh; }
+    35% { bottom: 8vh; }
+    100% { bottom: 10vh; }
+  }
+/* /Down Arrow */
+.section-about {
+    padding: 4rem 0;
+}
+.section-about article {
+    margin: 4rem 0;
+}
+.section-about ul li {
+    list-style-type: circle;
+}
+#contact {
+    background: grey;
+    padding: 1rem 0 0 0;
+}
+a[href="mailto:darwinpsmith@gmail.com"] {
+    color: azure;
+    text-decoration: none;
+    transition: color 250ms;
+}
+a[href="mailto:darwinpsmith@gmail.com"]:hover {
+    color: #c5c5c5;
+}
+#contact svg {
+    width: 1.5rem;
+}
+#contact > div > ul {
+    margin-bottom: 0;
+}
+#contact div.grid {
+    margin: 2rem auto 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    text-align: center;
+}
+#contact a {
+    margin: 0 auto;
+    color: azure;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.contact-svg {
+    text-align: center;
+    margin: 0 auto;
+    color: azure;
+    transition: color 250ms;
+}
+.contact-svg:hover {
+    color: #c5c5c5;
+}
+.copyright {
+    text-align: center;
+    color: black;
+    font-size: .75rem;
+    margin: 0;
+    padding: .8rem;
+}
+@media (max-width: 765px) {
+    .nav-header {
+        background: rgb(41, 41, 41);
+    }
+    .nav-item a {
+        padding: 1rem .5rem;
+    }
+    #contact div.grid {
+        margin: 2rem auto 1.5rem;
+        grid-template-columns: 1fr;
+        align-items: center;
+        text-align: center;
+        grid-gap: 2rem;
+    }
+}
